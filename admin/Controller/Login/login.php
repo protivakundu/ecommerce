@@ -5,7 +5,7 @@ require("../db.php");
 $email=$_POST["email"];
 $password=$_POST["password"];
 
-
+//create sql
 $sql="SELECT * FROM users WHERE email='$email'";
     
 $result=$con->query($sql);
