@@ -57,3 +57,6 @@ $result=$con->query($view_categories);
     </div>
 
 <?php include("./inc/footer.php") ?>
+
+
+<!-- hello nice to meet you -->
