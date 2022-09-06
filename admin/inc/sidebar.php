@@ -24,9 +24,14 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/ecommerce/admin/categories.php"">
+                <a class="nav-link" href="http://localhost/ecommerce/admin/categories.php">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Categories</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost/ecommerce/admin/products.php">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Products</span></a>
             </li>
 
             <!-- Heading -->
