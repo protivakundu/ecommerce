@@ -16,6 +16,14 @@ $result=$con->query($view_categories);
           <?php } 
             unset($_SESSION["success_msg"])
           ?>
+           <?php  if(isset($_SESSION["fail_msg"])) { ?>
+            <div class="alert alert-danger alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <?php echo $_SESSION["fail_msg"] ?>
+            </div>
+          <?php } 
+            unset($_SESSION["fail_msg"])
+          ?>
         </div>
       </div>
       <div class="table-resposive">
@@ -38,12 +46,12 @@ $result=$con->query($view_categories);
             <td><?php echo $records['name'];?></td>
             <td><?php echo $records['0'];?></td>
             <td>
-              <a href="http://Controller/categories/update_categories.php?id=<?php echo $records['id'];?>" class="btn btn-outline-primary">
+              <a href="http://localhost/ecommerce/admin/update_categories.php?id=<?php echo $records['id'];?>" class="btn btn-outline-primary">
                 Edit
               </a>
             </td>
             <td>
-            <a href="http://Controller/categories/delete.php?id=<?php echo $records['id'];?>" class="btn btn-outline-danger">
+              <a href="http://localhost/ecommerce/admin/Controller/categories/delete.php?id=<?php echo $records['id'];?>" class="btn btn-outline-danger">
                 Delete
               </a>
             </td>
