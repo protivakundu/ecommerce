@@ -14,7 +14,7 @@ $fileName=$file["name"];
 $fileExt=end(explode(".", $fileName));
 $filePath=$file["tmp_name"];
 
-$allowtype=array("jpg","jpeg","png","gif");
+$allowtype=array("jpg","jpeg","png","gif","webp","jfif");
 
 session_start();
 if(in_array($fileExt,$allowtype)){
@@ -28,6 +28,8 @@ if(in_array($fileExt,$allowtype)){
     $con->query($sql);  
     
     $_SESSION["success_msg"]="Your product is added";    
+    $_SESSION["succes_msg"]="Your product is added";
+    
 }
 else{
     $_SESSION["fail_msg"]="Your product is added";
