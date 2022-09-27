@@ -40,6 +40,7 @@
                                                 <input type="password" placeholder="Password" name="password" required>
                                             </div>
                                             <button type="submit">Login</button>
+                                            <button type="button"><a class="text-white" href="http://localhost/ecommerce/customer/register.php">Create new account</a></button>
                                             
                                             <a href="#" class="lost-pass">Lost Your Password?</a>
                                         </form>

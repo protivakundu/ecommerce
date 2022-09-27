@@ -193,7 +193,7 @@
                             <nav>
                                 <ul class="dept__menu--list">
                                     <li><a class="dept__menu-mlink f-900 cod__gray-color" href="JavaScript:Void(0);">Shop By Departments</a>
-                                        <ul class="dept__menu--dropdown open">
+                                        <!-- <ul class="dept__menu--dropdown open">
                                             <li class="dropdown"><a class="dept__menu--dlink" href="#">Lamps & Lighting</a>
                                                 <ul class="sub__menu sub__dept--menu">
                                                     <li><a href="#">Desktop</a></li>
@@ -302,7 +302,7 @@
                                                     <li><a href="#">Tablet</a></li>
                                                 </ul>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                 </ul>
                             </nav>
