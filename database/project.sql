@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2022 at 08:47 AM
+-- Generation Time: Sep 27, 2022 at 11:49 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -25,6 +25,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `customer` int(11) NOT NULL,
+  `product` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `catagories`
 --
 
@@ -41,7 +54,8 @@ CREATE TABLE `catagories` (
 INSERT INTO `catagories` (`id`, `parent_id`, `name`) VALUES
 (14, '0', 'Electronics'),
 (15, '0', 'Garments'),
-(16, '15', 'tshirts');
+(16, '15', 'tshirts'),
+(17, '14', 'Mobile');
 
 -- --------------------------------------------------------
 
@@ -67,7 +81,8 @@ INSERT INTO `customer` (`id`, `username`, `email`, `password`) VALUES
 (4, 'jkhkjhasd', 'abc@gmail.com', '$2y$10$AXUeDkS6Db29RhnZ6XXTxerEnhHNUzD1QYDjxyCkPBho2Ns/eFVLe'),
 (5, 'kaka', 'kaka@gmail.com', '$2y$10$wBugkSUpkddD9QloFqqatu9bAnHCm/ZRYGzI3sY./VGCGSYlbM./q'),
 (6, 'sagar', 'sagar@hentai.com', '$2y$10$FRXRvc5LsWnDNbFYv3ZQvOEibpRWuKBRWFILXk/nmZbjZ1ZX666Fm'),
-(7, 'dada', 'dada@gmail.com', '$2y$10$dGnrugatCHeeDX4nJ4Ozi.9IMLbissxCgKk46wD8cUlnpPjYUZ4ie');
+(7, 'dada', 'dada@gmail.com', '$2y$10$dGnrugatCHeeDX4nJ4Ozi.9IMLbissxCgKk46wD8cUlnpPjYUZ4ie'),
+(8, 'arpan', 'apubhattacharya71@gmail.com', '$2y$10$1D4zK7ySsub.hN3A3oedQe2pVDxgUxaNNgefJgaUnoJYAPWT6DIAi');
 
 -- --------------------------------------------------------
 
@@ -86,6 +101,18 @@ CREATE TABLE `product` (
   `s_price` text NOT NULL,
   `warranty` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `image`, `category`, `p_name`, `p_code`, `description`, `price`, `s_price`, `warranty`) VALUES
+(1, '1664262606.webp', '16', 'lilli', '89562', 'good ', '800', '1000', '2022-10-08'),
+(2, '1664262915.jfif', '17', 'samsung', '855621', 'good phone', '15000', '20000', '2022-10-08'),
+(3, '1664262963.jfif', '17', 'samsung11', '955641', 'good', '20000', '25000', '2022-10-14'),
+(4, '1664263960.jpg', '16', 'samsung', '5585', 'iooihoihohoho', '8955555', '8527', '2022-09-27'),
+(5, '1664263996.jpg', '16', 'samsung', '5585', 'iooihoihohoho', '8955555', '8527', '2022-09-27'),
+(6, '1664264072.jpg', '16', 'samsung', '5585', 'iooihoihohoho', '8955555', '8527', '2022-09-27');
 
 -- --------------------------------------------------------
 
@@ -153,19 +180,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `catagories`
 --
 ALTER TABLE `catagories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`

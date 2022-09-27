@@ -1,4 +1,7 @@
-<?php include("./inc/header.php") ?>
+<?php 
+    include("./inc/header.php");
+    include("./Controller/db.php");   
+?>
 
     <!-- Main -->
     <main class="main--wrapper">
@@ -182,251 +185,47 @@
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                     <div class="product__active owl-carousel">
-                                        <div class="product__single">
-                                            <div class="product__box">
-                                                <div class="product__thumb">
-                                                    <a href="product-details.html" class="img-wrapper">
-                                                        <img class="img" src="img/allproducts/products__thumb__01.jpg" alt="">
-                                                        <img class="img secondary-img" src="img/allproducts/products__thumb__02.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product__content--top">
-                                                    <span class="cate-name">SAMSUNG</span>
-                                                    <h6 class="product__title mine__shaft-color f-700 mb-0"><a href="product-details.html">Wireless Audioing Systems Purple
-                                                            Degree</a></h6>
-                                                </div>
-                                                <div class="product__content--rating d-flex justify-content-between">
-                                                    <div class="rating">
-                                                        <ul class="list-inline">
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                        </ul>
+                                        <?php
+                                            $sql = "SELECT * FROM product LEFT JOIN catagories ON product.category = catagories.id";
+                                            $result = $con->query($sql);
+                                            while($record = mysqli_fetch_array($result)) { 
+                                        ?>
+                                            
+                                            <div class="product__single">
+                                                <div class="product__box">
+                                                    <div class="product__thumb">
+                                                        <a href="http://localhost/ecommerce/customer/product_details.php?id=<?php echo $record[0] ?>" class="img-wrapper">
+                                                            <img class="img" src="http://localhost/ecommerce/admin/product_image/<?php echo $record["image"] ?>" alt="" style="width: 100%; height: 200px;">
+                                                        </a>
                                                     </div>
-                                                    <div class="price">
-                                                        <h5 class="grenadier-color f-600">$2,299.00</h5>
+                                                    <div class="product__content--top">
+                                                        <span class="cate-name"><?php echo $record["name"] ?></span>
+                                                        <h6 class="product__title mine__shaft-color f-700 mb-0"><a href="product-details.html"><?php echo $record["p_name"] ?></a></h6>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-action">
-                                                <a href="#"><span class="lnr lnr-heart"></span></a>
-                                                <a href="#"><span class="lnr lnr-eye"></span></a>
-                                                <a href="#"><span class="lnr lnr-cart"></span></a>
-                                                <a href="#"><span class="lnr lnr-sync"></span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__single">
-                                            <div class="product__box">
-                                                <div class="product__thumb">
-                                                    <a href="product-details.html" class="img-wrapper">
-                                                        <img class="img" src="img/allproducts/products__thumb__02.jpg" alt="">
-                                                        <img class="img secondary-img" src="img/allproducts/products__thumb__04.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product__content--top">
-                                                    <span class="cate-name">SAMSUNG</span>
-                                                    <h6 class="product__title mine__shaft-color f-700 mb-0"><a href="product-details.html">Wireless Audioing Systems Purple
-                                                            Degree</a></h6>
-                                                </div>
-                                                <div class="product__content--rating d-flex justify-content-between">
-                                                    <div class="rating">
-                                                        <ul class="list-inline">
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="price">
-                                                        <h5 class="grenadier-color f-600">$2,299.00</h5>
+                                                    <div class="product__content--rating d-flex justify-content-between">
+                                                        <div class="rating">
+                                                            <ul class="list-inline">
+                                                                <li class="rating-active"><i class="fas fa-star"></i></li>
+                                                                <li class="rating-active"><i class="fas fa-star"></i></li>
+                                                                <li class="rating-active"><i class="fas fa-star"></i></li>
+                                                                <li><i class="fas fa-star"></i></li>
+                                                                <li><i class="fas fa-star"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="price">
+                                                            <h5 class="grenadier-color f-600">$<?php echo $record["price"] ?></h5>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="product-action">
-                                                <a href="#"><span class="lnr lnr-heart"></span></a>
-                                                <a href="#"><span class="lnr lnr-eye"></span></a>
-                                                <a href="#"><span class="lnr lnr-cart"></span></a>
-                                                <a href="#"><span class="lnr lnr-sync"></span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__single">
-                                            <div class="product__box">
-                                                <div class="product__thumb">
-                                                    <a href="product-details.html" class="img-wrapper">
-                                                        <img class="img" src="img/allproducts/products__thumb__03.jpg" alt="">
-                                                        <img class="img secondary-img" src="img/allproducts/products__thumb__05.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product__content--top">
-                                                    <span class="cate-name">SAMSUNG</span>
-                                                    <h6 class="product__title mine__shaft-color f-700 mb-0"><a href="product-details.html">Wireless Audioing Systems Purple
-                                                            Degree</a></h6>
-                                                </div>
-                                                <div class="product__content--rating d-flex justify-content-between">
-                                                    <div class="rating">
-                                                        <ul class="list-inline">
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="price">
-                                                        <h5 class="grenadier-color f-600">$2,299.00</h5>
-                                                    </div>
+                                                <div class="product-action">
+                                                    <a href="#"><span class="lnr lnr-heart"></span></a>
+                                                    <a href="#"><span class="lnr lnr-eye"></span></a>
+                                                    <a href="#"><span class="lnr lnr-cart"></span></a>
+                                                    <a href="#"><span class="lnr lnr-sync"></span></a>
                                                 </div>
                                             </div>
-                                            <div class="product-action">
-                                                <a href="#"><span class="lnr lnr-heart"></span></a>
-                                                <a href="#"><span class="lnr lnr-eye"></span></a>
-                                                <a href="#"><span class="lnr lnr-cart"></span></a>
-                                                <a href="#"><span class="lnr lnr-sync"></span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__single">
-                                            <div class="product__box">
-                                                <div class="product__thumb">
-                                                    <a href="product-details.html" class="img-wrapper">
-                                                        <img class="img" src="img/allproducts/products__thumb__04.jpg" alt="">
-                                                        <img class="img secondary-img" src="img/allproducts/products__thumb__06.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product__content--top">
-                                                    <span class="cate-name">SAMSUNG</span>
-                                                    <h6 class="product__title mine__shaft-color f-700 mb-0"><a href="product-details.html">Wireless Audioing Systems Purple
-                                                            Degree</a></h6>
-                                                </div>
-                                                <div class="product__content--rating d-flex justify-content-between">
-                                                    <div class="rating">
-                                                        <ul class="list-inline">
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="price">
-                                                        <h5 class="grenadier-color f-600">$2,299.00</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-action">
-                                                <a href="#"><span class="lnr lnr-heart"></span></a>
-                                                <a href="#"><span class="lnr lnr-eye"></span></a>
-                                                <a href="#"><span class="lnr lnr-cart"></span></a>
-                                                <a href="#"><span class="lnr lnr-sync"></span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__single">
-                                            <div class="product__box">
-                                                <div class="product__thumb">
-                                                    <a href="product-details.html" class="img-wrapper">
-                                                        <img class="img" src="img/allproducts/products__thumb__05.jpg" alt="">
-                                                        <img class="img secondary-img" src="img/allproducts/products__thumb__07.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product__content--top">
-                                                    <span class="cate-name">SAMSUNG</span>
-                                                    <h6 class="product__title mine__shaft-color f-700 mb-0"><a href="product-details.html">Wireless Audioing Systems Purple
-                                                            Degree</a></h6>
-                                                </div>
-                                                <div class="product__content--rating d-flex justify-content-between">
-                                                    <div class="rating">
-                                                        <ul class="list-inline">
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="price">
-                                                        <h5 class="grenadier-color f-600">$2,299.00</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-action">
-                                                <a href="#"><span class="lnr lnr-heart"></span></a>
-                                                <a href="#"><span class="lnr lnr-eye"></span></a>
-                                                <a href="#"><span class="lnr lnr-cart"></span></a>
-                                                <a href="#"><span class="lnr lnr-sync"></span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__single">
-                                            <div class="product__box">
-                                                <div class="product__thumb">
-                                                    <a href="product-details.html" class="img-wrapper">
-                                                        <img class="img" src="img/allproducts/products__thumb__06.jpg" alt="">
-                                                        <img class="img secondary-img" src="img/allproducts/products__thumb__08.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product__content--top">
-                                                    <span class="cate-name">SAMSUNG</span>
-                                                    <h6 class="product__title mine__shaft-color f-700 mb-0"><a href="product-details.html">Wireless Audioing Systems Purple
-                                                            Degree</a></h6>
-                                                </div>
-                                                <div class="product__content--rating d-flex justify-content-between">
-                                                    <div class="rating">
-                                                        <ul class="list-inline">
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="price">
-                                                        <h5 class="grenadier-color f-600">$2,299.00</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-action">
-                                                <a href="#"><span class="lnr lnr-heart"></span></a>
-                                                <a href="#"><span class="lnr lnr-eye"></span></a>
-                                                <a href="#"><span class="lnr lnr-cart"></span></a>
-                                                <a href="#"><span class="lnr lnr-sync"></span></a>
-                                            </div>
-                                        </div>
-                                        <div class="product__single">
-                                            <div class="product__box">
-                                                <div class="product__thumb">
-                                                    <a href="product-details.html" class="img-wrapper">
-                                                        <img class="img" src="img/allproducts/products__thumb__07.jpg" alt="">
-                                                        <img class="img secondary-img" src="img/allproducts/products__thumb__09.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product__content--top">
-                                                    <span class="cate-name">SAMSUNG</span>
-                                                    <h6 class="product__title mine__shaft-color f-700 mb-0"><a href="product-details.html">Wireless Audioing Systems Purple
-                                                            Degree</a></h6>
-                                                </div>
-                                                <div class="product__content--rating d-flex justify-content-between">
-                                                    <div class="rating">
-                                                        <ul class="list-inline">
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li class="rating-active"><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="price">
-                                                        <h5 class="grenadier-color f-600">$2,299.00</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-action">
-                                                <a href="#"><span class="lnr lnr-heart"></span></a>
-                                                <a href="#"><span class="lnr lnr-eye"></span></a>
-                                                <a href="#"><span class="lnr lnr-cart"></span></a>
-                                                <a href="#"><span class="lnr lnr-sync"></span></a>
-                                            </div>
-                                        </div>
+                                        <?php } ?>
+
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">

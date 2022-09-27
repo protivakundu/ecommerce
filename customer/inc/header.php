@@ -1,7 +1,8 @@
-<?php session_start() ?>
+<?php 
+    session_start();
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
-
 
 
 <head>
@@ -85,47 +86,7 @@
                                     <ul class="list-inline">
                                         <li><a href="#"><i class="fal fa-user-plus"></i></a></li>
                                         <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                        <li><a class="mini__cart--link" href="#"><i class="fal fa-bags-shopping"><span class="cart__count">3</span></i><span class="cart__amount">$ 3550</span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="mini__cart--box">
-                                    <ul>
-                                        <li class="mb-20">
-                                            <div class="cart-image">
-                                                <a href="#"><img src="img/allproducts/cart__thumb__1.jpg" alt=""></a>
-                                            </div>
-                                            <div class="cart-text">
-                                                <a href="#" class="title f-400 cod__black-color">Pink Jacket</a>
-                                                <span class="cart-price f-400 dusty__gray-color">2 x <span class="price f-800 cod__black-color">$ 78.00</span></span>
-                                            </div>
-                                            <div class="del-button">
-                                                <a href="#"><i class="icofont-close-line"></i></a>
-                                            </div>
-                                        </li>
-                                        <li class="mb-20">
-                                            <div class="cart-image">
-                                                <a href="#"><img src="img/allproducts/cart__thumb__2.jpg" alt=""></a>
-                                            </div>
-                                            <div class="cart-text">
-                                                <a href="#" class="title f-400 cod__black-color">Silk Glows</a>
-                                                <span class="cart-price f-400 dusty__gray-color">2 x <span class="price f-800 cod__black-color">$ 78.00</span></span>
-                                            </div>
-                                            <div class="del-button">
-                                                <a href="#"><i class="icofont-close-line"></i></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="total-text d-flex justify-content-between">
-                                                <span class="f-800 cod__black-color">Total Bag </span>
-                                                <span class="f-800 cod__black-color">$ 99.00</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="d-flex justify-content-between">
-                                                <a href="#" class="checkout">Checkout</a>
-                                                <a href="#" class="viewcart">View Cart</a>
-                                            </div>
-                                        </li>
+                                        <li><a href="http://localhost/ecommerce/customer/cart.php"><i class="fal fa-bags-shopping"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -144,47 +105,7 @@
                                 <ul class="list-inline">
                                     <li><a href="#"><i class="fal fa-user-plus"></i></a></li>
                                     <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                    <li><a class="mini__cart--link" href="#"><i class="fal fa-bags-shopping"><span class="cart__count">3</span></i><span class="cart__amount">$ 3550</span></a></li>
-                                </ul>
-                            </div>
-                            <div class="mini__cart--box">
-                                <ul>
-                                    <li class="mb-20">
-                                        <div class="cart-image">
-                                            <a href="#"><img src="img/allproducts/cart__thumb__1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="cart-text">
-                                            <a href="#" class="title f-400 cod__black-color">Pink Jacket</a>
-                                            <span class="cart-price f-400 dusty__gray-color">2 x <span class="price f-800 cod__black-color">$ 78.00</span></span>
-                                        </div>
-                                        <div class="del-button">
-                                            <a href="#"><i class="icofont-close-line"></i></a>
-                                        </div>
-                                    </li>
-                                    <li class="mb-20">
-                                        <div class="cart-image">
-                                            <a href="#"><img src="img/allproducts/cart__thumb__2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="cart-text">
-                                            <a href="#" class="title f-400 cod__black-color">Silk Glows</a>
-                                            <span class="cart-price f-400 dusty__gray-color">2 x <span class="price f-800 cod__black-color">$ 78.00</span></span>
-                                        </div>
-                                        <div class="del-button">
-                                            <a href="#"><i class="icofont-close-line"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="total-text d-flex justify-content-between">
-                                            <span class="f-800 cod__black-color">Total Bag </span>
-                                            <span class="f-800 cod__black-color">$ 99.00</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-flex justify-content-between">
-                                            <a href="#" class="checkout">Checkout</a>
-                                            <a href="#" class="viewcart">View Cart</a>
-                                        </div>
-                                    </li>
+                                    <li><a href="#"><i class="fal fa-bags-shopping"></i></a></li>
                                 </ul>
                             </div>
                         </div>

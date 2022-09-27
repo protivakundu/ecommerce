@@ -14,6 +14,15 @@
           <?php } 
             unset($_SESSION["success_msg"])
           ?>
+
+        <?php  if(isset($_SESSION["fail_msg"])) { ?>
+            <div class="alert alert-danger alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <?php echo $_SESSION["fail_msg"] ?>
+            </div>
+          <?php } 
+            unset($_SESSION["fail_msg"])
+          ?>
         </div>
       </div>
       <div class="table-resposive">
