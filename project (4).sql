@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2022 at 08:47 AM
+-- Generation Time: Sep 27, 2022 at 09:16 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -41,7 +41,8 @@ CREATE TABLE `catagories` (
 INSERT INTO `catagories` (`id`, `parent_id`, `name`) VALUES
 (14, '0', 'Electronics'),
 (15, '0', 'Garments'),
-(16, '15', 'tshirts');
+(16, '15', 'tshirts'),
+(17, '14', 'Mobile');
 
 -- --------------------------------------------------------
 
@@ -86,6 +87,15 @@ CREATE TABLE `product` (
   `s_price` text NOT NULL,
   `warranty` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `image`, `category`, `p_name`, `p_code`, `description`, `price`, `s_price`, `warranty`) VALUES
+(1, '1664262606.webp', '16', 'lilli', '89562', 'good ', '800', '1000', '2022-10-08'),
+(2, '1664262915.jfif', '17', 'samsung', '855621', 'good phone', '15000', '20000', '2022-10-08'),
+(3, '1664262963.jfif', '17', 'samsung11', '955641', 'good', '20000', '25000', '2022-10-14');
 
 -- --------------------------------------------------------
 
@@ -153,7 +163,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `catagories`
 --
 ALTER TABLE `catagories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -165,7 +175,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
