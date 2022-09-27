@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2022 at 05:10 PM
+-- Generation Time: Sep 27, 2022 at 08:47 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,7 +39,9 @@ CREATE TABLE `catagories` (
 --
 
 INSERT INTO `catagories` (`id`, `parent_id`, `name`) VALUES
-(14, '0', 'Electronics');
+(14, '0', 'Electronics'),
+(15, '0', 'Garments'),
+(16, '15', 'tshirts');
 
 -- --------------------------------------------------------
 
@@ -66,6 +68,24 @@ INSERT INTO `customer` (`id`, `username`, `email`, `password`) VALUES
 (5, 'kaka', 'kaka@gmail.com', '$2y$10$wBugkSUpkddD9QloFqqatu9bAnHCm/ZRYGzI3sY./VGCGSYlbM./q'),
 (6, 'sagar', 'sagar@hentai.com', '$2y$10$FRXRvc5LsWnDNbFYv3ZQvOEibpRWuKBRWFILXk/nmZbjZ1ZX666Fm'),
 (7, 'dada', 'dada@gmail.com', '$2y$10$dGnrugatCHeeDX4nJ4Ozi.9IMLbissxCgKk46wD8cUlnpPjYUZ4ie');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `image` text NOT NULL,
+  `category` text NOT NULL,
+  `p_name` text NOT NULL,
+  `p_code` text NOT NULL,
+  `description` text NOT NULL,
+  `price` text NOT NULL,
+  `s_price` text NOT NULL,
+  `warranty` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -113,6 +133,12 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -127,13 +153,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `catagories`
 --
 ALTER TABLE `catagories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
