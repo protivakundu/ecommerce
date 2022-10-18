@@ -190,7 +190,9 @@
                                             $result = $con->query($sql);
                                             while($record = mysqli_fetch_array($result)) { 
                                         ?>
-                                            
+                                       
+                            
+                                    
                                             <div class="product__single">
                                                 <div class="product__box">
                                                     <div class="product__thumb">
